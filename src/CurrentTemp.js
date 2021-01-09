@@ -34,12 +34,12 @@ export default function CurrentTemp() {
         </div>
           Feels like {tempData.feelslike} C°
         </li>
-        <li className="description">
-          <span>{tempData.wind} </span>km/h
+        <li className="description"> 
+          <span> Wind {tempData.wind} </span>km/h
         </li>
         <li className="description">
           Humidity {tempData.humidity}
-          <span>95</span>%
+          <span></span>%
         </li>
         <li className="minMax">
           <span>max {tempData.max}</span>°

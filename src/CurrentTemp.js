@@ -16,12 +16,9 @@ export default function CurrentTemp() {
   return (
 
       <ul>
-        
-           
         <li className="current-temperature">
-      
-          <span className="temperature"> {tempData.temperature}</span>
-          <img className="degree-icon" src="images/degree.png" alt="" />
+       <span className="temperature"> {tempData.temperature}</span>
+        
           <span className="units">
             <a href="/" className="active">
               C°{" "}
@@ -33,18 +30,15 @@ export default function CurrentTemp() {
         <li className="description">
           <div >
           {tempData.condition}
-          <img  src={tempData.imgUrl} alt="" className="weatherIcon"/>
+          <img  src={tempData.imgUrl} alt="cloudy" className="weatherIcon"/>
         </div>
           Feels like {tempData.feelslike} C°
-          <img className="indice-icon" src="images/indice.png" alt="" />
         </li>
         <li className="description">
-          Wind <img className="wind-icon" src="images/wind.png" alt="" />
           <span>{tempData.wind} </span>km/h
         </li>
         <li className="description">
           Humidity {tempData.humidity}
-          <img className="humidity-icon" src="images/humid.png" alt="" />
           <span>95</span>%
         </li>
         <li className="minMax">

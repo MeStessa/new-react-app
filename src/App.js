@@ -3,7 +3,7 @@ import './App.css';
 import Search from "./Search";
 import CurrentTemp from "./CurrentTemp";
 import Forecast from "./Forecast";
-import axios from "axios";
+
 
 
 function App() {
@@ -12,18 +12,11 @@ function App() {
     <div className="App">
       <div className="container">
           <div className="block">
-     
-        
             <Search />
-           
-              <h1> Milan</h1>
-      
-      
-     
-           <CurrentTemp/>
+            <h1> Milan</h1>
+            <CurrentTemp/>
              <Forecast/>
         
-            <div className="row forecast-hour"></div>
           </div>
            </div>
         

@@ -1,7 +1,6 @@
 import React from "react";
 import "./Search.css";
-import axios from "axios";
-import Button from 'react-bootstrap/Button';
+
 
 export default function Search() {
   return (

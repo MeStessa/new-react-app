@@ -25,6 +25,5 @@ export default function Forecast(){
           <div className="col">
             <p>28 Jan</p>
           </div></div> </div>
-        </div>
-        );
+        </div>);
 }

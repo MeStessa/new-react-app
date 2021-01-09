@@ -20,10 +20,10 @@ export default function CurrentTemp() {
        <span className="temperature"> {tempData.temperature}</span>
         
           <span className="units">
-            <a href="/" className="active">
+            <span href="/" className="active">
               C°{" "}
-            </a>
-            |<a href="/">F° </a>
+            </span>
+            |<span href="/">F° </span>
           </span>
         </li>
 

@@ -1,25 +1,44 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
+import Search from "./Search";
+import CurrentTemp from "./CurrentTemp";
+import Forecast from "./Forecast";
+import axios from "axios";
+
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+      <div className="container">
+          <div className="block">
+     
+        
+            <Search />
+           
+              <h1> Milan</h1>
+      
+      
+     
+           <CurrentTemp/>
+             <Forecast/>
+        
+            <div className="row forecast-hour"></div>
+          </div>
+           </div>
+        
+      <p className="coded-by">
+        <a href="https://github.com/MeStessa/Meteo-App" target="_blank">
+          Open-source code
         </a>
-      </header>
+        by Marina Mukhina
+      </p>
+      ;
     </div>
   );
+
+    
+
 }
 
 export default App;

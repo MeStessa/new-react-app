@@ -1,12 +1,13 @@
 import React from "react";
 import './App.css';
+import "bootstrap/dist/css/bootstrap.css";
 
 
 export default function Forecast(){
 
     return  (
                <div className="Forecast">
-      <div className="weather">
+
         <h3>Week Forecast</h3>
 
         <div className="row">
@@ -24,6 +25,24 @@ export default function Forecast(){
           </div>
           <div className="col">
             <p>28 Jan</p>
-          </div></div> </div>
-        </div>);
+          </div></div> 
+          <div className="row">
+               <div className="col">
+            <p>15°/11°</p>
+          </div>
+          <div className="col">
+            <p>11°/11°</p>
+          </div>
+          <div className="col">
+            <p>12°/14°</p>
+          </div>
+          <div className="col">
+            <p>12°/11°</p>
+          </div>
+          <div className="col">
+            <p>12°/9°</p>
+          </div></div> 
+            
+            </div>
+        );
 }

@@ -29,6 +29,9 @@ h1 {
 ul {
   list-style: none;
 }
+.units {
+  margin-left: 5px;
+}
 
 .block {
   padding: 10px;

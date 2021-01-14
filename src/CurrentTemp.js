@@ -1,5 +1,7 @@
 import React from "react";
 import "./App.css"
+import "bootstrap/dist/css/bootstrap.css";
+
 
 export default function CurrentTemp() {
   let tempData = {
@@ -15,9 +17,14 @@ export default function CurrentTemp() {
 
   return (
 
-      <ul>
-        <li className="current-temperature">
-       <span className="temperature"> {tempData.temperature}</span>
+      <ul className=" CurrentTemp">
+        
+          <div className="row col">
+            
+          <h1 className="city">Milan</h1> 
+           
+            <div className="row col">
+       <span className="temperature"> {tempData.temperature}</span> 
         
           <span className="units">
             <span href="/" className="active">
@@ -25,12 +32,18 @@ export default function CurrentTemp() {
             </span>
             |<span href="/">F° </span>
           </span>
-        </li>
-
+        </div>
+        
+        <div className="minMax">
+          <span>max {tempData.max}</span>°
+      
+         /  <span>min {tempData.min}</span>° 
+         </div>
+</div>
         <li className="description">
           <div >
           {tempData.condition}
-          <img  src={tempData.imgUrl} alt="cloudy" className="weatherIcon"/>
+          <img  src={tempData.imgUrl} alt="cloudy" className="weather-icon"/>
         </div>
           Feels like {tempData.feelslike} C°
         </li>
@@ -40,12 +53,6 @@ export default function CurrentTemp() {
         <li className="description">
           Humidity {tempData.humidity}
           <span></span>%
-        </li>
-        <li className="minMax">
-          <span>max {tempData.max}</span>°
-        </li>
-        <li>
-          <span>min{tempData.min}</span>°
         </li>
       </ul>
    

@@ -1,12 +1,7 @@
 .App {
-  background: #d9a7c7; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #fffcdc,
-    #d9a7c7
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #fffcdc, #d9a7c7);
   color: white;
+  max-width: 650px;
+  margin: auto;
 }
 body {
   background: #d9a7c7; /* fallback for old browsers */

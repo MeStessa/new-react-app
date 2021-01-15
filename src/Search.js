@@ -1,5 +1,6 @@
 import React from "react";
 import "./Search.css";
+import axios from "axios";
 
 
 export default function Search() {
@@ -10,7 +11,7 @@ export default function Search() {
             type="search"
             placeholder=" Enter the city "
             size="20"
-            autoFocus="on"
+            autoFocus="true"
             className="search-input"/>
            
           <button className="btn "type="submit"> Search </button>

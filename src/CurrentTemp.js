@@ -1,30 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css"
+import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 
 
 export default function CurrentTemp() {
-  let tempData = {
-    condition: "Cloudy",
-    imgUrl: "https://www.3bmeteo.com/images/set_icone/7/67-67/48n.png",
-    temperature: "9",
-    feelslike: "8",
-    wind: "1",
-    humidity: "95",
-    max: "9",
-    min: "7"
-  };
 
-  return (
+  const [request, setRequest]= useState(false);
+  const[weather, setWeather]=useState({});
+  
 
-      <ul className=" CurrentTemp">
+  function getWeather(response){
+    console.log(response);
+   
+     setWeather({
+      city:response.data.name,
+      date:"Friday 15 Jan",
+      temp: response.data.main.temp,
+      temp_min:response.data.main.temp_min,
+      temp_max: response.data.main.temp_max,
+      feelslike:response.data.main.feels_like,
+      humidity: response.data.main.humidity,
+      wind: response.data.wind.speed,
+      description: response.data.weather[0].description,
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    });
+    
+    setRequest(true);
+    
+  }
+  
+    
+    if (request){
+      
+       return (
+
+      <ul className=" CurrentTemp text-capitalize ">
         
           <div className="row col">
             
-          <h1 className="city">Milan</h1> 
-           
+          <h1 className="city"> {weather.city}</h1> 
+           <div>{weather.date}</div>
             <div className="row col">
-       <span className="temperature"> {tempData.temperature}</span> 
+       <span className="temperature"> {Math.round(weather.temp)}</span> 
         
           <span className="units">
             <span href="/" className="active">
@@ -35,26 +53,38 @@ export default function CurrentTemp() {
         </div>
         
         <div className="minMax">
-          <span>max {tempData.max}</span>°
+          <span>max </span> {Math.round(weather.temp_max)}°
       
-         /  <span>min {tempData.min}</span>° 
+         /  <span>min </span> {Math.round(weather.temp_min)}° 
          </div>
 </div>
         <li className="description">
-          <div >
-          {tempData.condition}
-          <img  src={tempData.imgUrl} alt="cloudy" className="weather-icon"/>
+          <div>
+         {weather.description}
+        <img src={weather.icon} alt={weather.description} />
         </div>
-          Feels like {tempData.feelslike} C°
+          Feels like {Math.round(weather.feelslike)} C°
         </li>
         <li className="description"> 
-          <span> Wind {tempData.wind} </span>km/h
+        Wind Speed: {weather.wind}km/h 
         </li>
         <li className="description">
-          Humidity {tempData.humidity}
-          <span></span>%
+          Humidity: {weather.humidity}%
+          
         </li>
+       
       </ul>
    
   );
-}
+    }
+    
+else{
+ 
+  let apiKey="2abf5cd5bdf12c255e9d60ca40791365";
+   let city="Moscow";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+ axios.get(apiUrl).then(getWeather);
+
+ return "loading..";
+ }
+ }

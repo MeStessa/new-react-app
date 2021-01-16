@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./App.css"
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
+ import Loader from 'react-loader-spinner';
+ import RecieveDate from "./RecieveDate";
 
 
 export default function CurrentTemp() {
@@ -11,11 +13,10 @@ export default function CurrentTemp() {
   
 
   function getWeather(response){
-    console.log(response);
    
      setWeather({
       city:response.data.name,
-      date:"Friday 15 Jan",
+      date: new Date (response.data.dt  * 1000),
       temp: response.data.main.temp,
       temp_min:response.data.main.temp_min,
       temp_max: response.data.main.temp_max,
@@ -34,13 +35,14 @@ export default function CurrentTemp() {
     if (request){
       
        return (
+         
 
       <ul className=" CurrentTemp text-capitalize ">
         
           <div className="row col">
             
           <h1 className="city"> {weather.city}</h1> 
-           <div>{weather.date}</div>
+           <RecieveDate date={weather.date}/>
             <div className="row col">
        <span className="temperature"> {Math.round(weather.temp)}</span> 
         
@@ -85,6 +87,15 @@ else{
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
  axios.get(apiUrl).then(getWeather);
 
- return "loading..";
+ return(
+      <Loader
+         type="TailSpin"
+         color="#ffffff"
+         height={100}
+         width={100}
+         timeout={3000} //3 secs
+ 
+      />
+     );
  }
  }

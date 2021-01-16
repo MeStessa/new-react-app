@@ -13,16 +13,16 @@ export default function HourForecast(){
 
       
          
-            <p>14 Jan <p>15°/11°</p></p>
+            <div>14 Jan <p>15°/11°</p></div>
         
-            <p>15 Jan  <p>15°/11°</p></p>
+            <div>15 Jan  <p>15°/11°</p></div>
       
-            <p>16 Jan <p>15°/11°</p></p>
+           <div>16 Jan <p>15°/11°</p></div>
          
          
-            <p>17 Jan <p>15°/11°</p></p>
+           <div>17 Jan <p>15°/11°</p></div>
           
-            <p>28 Jan <p>15°/11°</p></p>
+            <div>28 Jan <p>15°/11°</p></div>
         
             </div>
         );

@@ -4,13 +4,14 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
  import Loader from 'react-loader-spinner';
  import RecieveDate from "./RecieveDate";
+ 
 
 
-export default function CurrentTemp() {
+export default function CurrentTemp(props) {
 
   const [request, setRequest]= useState(false);
   const[weather, setWeather]=useState({});
-  
+  const[city, setCity]=useState(props.defaultCity);
 
   function getWeather(response){
    
@@ -26,18 +27,47 @@ export default function CurrentTemp() {
       description: response.data.weather[0].description,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     });
-    
-    setRequest(true);
-    
+   setRequest(true);
+  }
+  function search(){
+  let apiKey="2abf5cd5bdf12c255e9d60ca40791365";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+ axios.get(apiUrl).then(getWeather);
+
+  }
+
+  
+   function handleSubmit(event){
+   event.preventDefault();
+    search();
   }
   
+   function searchCity(event){
+    setCity(event.target.value);
+   
+  }
+
+
     
     if (request){
       
        return (
          
+         
 
       <ul className=" CurrentTemp text-capitalize ">
+       
+        <form onSubmit={handleSubmit}>
+          <input 
+            type="search"
+            placeholder=" Enter the city "
+            size="20"
+            autoFocus={true}
+            className="search-input"/>
+           
+          <input  className="btn" type="submit" value= "Search" />
+         <input className="btn  current-button" type="submit" value= "Current"/>
+        </form>
         
           <div className="row col">
             
@@ -74,18 +104,12 @@ export default function CurrentTemp() {
           Humidity: {weather.humidity}%
           
         </li>
-       
-      </ul>
-   
+        </ul>
   );
     }
     
 else{
- 
-  let apiKey="2abf5cd5bdf12c255e9d60ca40791365";
-   let city="Moscow";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
- axios.get(apiUrl).then(getWeather);
+search();
 
  return(
       <Loader

@@ -99,3 +99,41 @@ ul {
 .weather-icon {
   width: 140px;
 }
+.HourForecast {
+  margin-top: 110px;
+}
+
+.btn {
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background: #dae2f8; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #d6a4a4,
+    #dae2f8
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #d6a4a4,
+    #dae2f8
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.search-input {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border: 0;
+  outline: none;
+  border-radius: 4px;
+  line-height: 2.2;
+  font-family: "Courier New", Courier, monospace;
+  margin: 20px 5px;
+}
+.current-button {
+  margin-left: 10px;
+}
+
+.search-icon {
+  width: 20px;
+}
+.pin-icon {
+  width: 20px;
+}

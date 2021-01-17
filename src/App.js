@@ -1,6 +1,6 @@
 import React from "react";
 import './App.css';
-import Search from "./Search";
+
 import CurrentTemp from "./CurrentTemp";
 import Forecast from "./Forecast";
 import HourForecast from "./HourForecast";
@@ -13,29 +13,19 @@ function App() {
       <div className="container">
           <div className="block">
             <div className="row">
-         <div className="col">
-            <Search />
-          
-         </div>
+         
          
          </div>
             <div className="row">
          <div className="col-sm">
-        
-             
               
-            <CurrentTemp/> </div>
+            <CurrentTemp defaultCity="Moscow"/> </div>
              <div className="col-sm">
                <HourForecast/>
             </div>
-         
          </div>
-           
-         
-             <Forecast/>
-            
-           
-           </div>
+           <Forecast/>
+             </div>
         </div>
       <p className="coded-by">
         <a href="https://github.com/MeStessa/new-react-app" target="_blank"  rel="noreferrer">

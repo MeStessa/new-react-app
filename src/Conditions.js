@@ -1,5 +1,4 @@
 import React from "react";
-import CurrentTemp from "./CurrentTemp";
  import RecieveDate from "./RecieveDate";
 
 export default function Conditions(props){

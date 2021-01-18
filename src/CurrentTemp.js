@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "./App.css"
+import "./App.css";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
  import Loader from 'react-loader-spinner';
- import RecieveDate from "./RecieveDate";
+ import Conditions from "./Conditions";
  
 
 
@@ -36,26 +36,22 @@ export default function CurrentTemp(props) {
 
   }
 
-  
    function handleSubmit(event){
    event.preventDefault();
-    search();
+   search();
+  
+  }
+  function handleCityChange(event){
+    setCity (event.target.value);
+
   }
   
-   function searchCity(event){
-    setCity(event.target.value);
-   
-  }
-
-
-    
     if (request){
       
        return (
          
          
-
-      <ul className=" CurrentTemp text-capitalize ">
+<div className=" CurrentTemp">
        
         <form onSubmit={handleSubmit}>
           <input 
@@ -63,49 +59,16 @@ export default function CurrentTemp(props) {
             placeholder=" Enter the city "
             size="20"
             autoFocus={true}
-            className="search-input"/>
-           
+            className="search-input"
+           onChange={handleCityChange}/>
           <input  className="btn" type="submit" value= "Search" />
-         <input className="btn  current-button" type="submit" value= "Current"/>
+        
         </form>
+         <input className="btn  current-button" type="submit" value= "Current"/>
+         <Conditions data={weather}/>
+        </div>)
+        ;
         
-          <div className="row col">
-            
-          <h1 className="city"> {weather.city}</h1> 
-           <RecieveDate date={weather.date}/>
-            <div className="row col">
-       <span className="temperature"> {Math.round(weather.temp)}</span> 
-        
-          <span className="units">
-            <span href="/" className="active">
-              C°{" "}
-            </span>
-            |<span href="/">F° </span>
-          </span>
-        </div>
-        
-        <div className="minMax">
-          <span>max </span> {Math.round(weather.temp_max)}°
-      
-         /  <span>min </span> {Math.round(weather.temp_min)}° 
-         </div>
-</div>
-        <li className="description">
-          <div>
-         {weather.description}
-        <img src={weather.icon} alt={weather.description} />
-        </div>
-          Feels like {Math.round(weather.feelslike)} C°
-        </li>
-        <li className="description"> 
-        Wind Speed: {weather.wind}km/h 
-        </li>
-        <li className="description">
-          Humidity: {weather.humidity}%
-          
-        </li>
-        </ul>
-  );
     }
     
 else{

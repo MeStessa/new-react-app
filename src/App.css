@@ -23,7 +23,12 @@ body {
 }
 .Conditions {
   padding: 10px;
-  background: rgba(128, 31, 231, 0.1);
+  margin-top: 10px;
+  background: rgba(230, 238, 238, 0.1);
+  border-radius: 10px;
+}
+.Conditions:hover {
+  background: rgba(13, 202, 202, 0.1);
 }
 .CurrentTemp .temperature {
   font-size: 100px;
@@ -90,11 +95,7 @@ ul {
     #d6a4a4,
     #dae2f8
   ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #d6a4a4,
-    #dae2f8
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, #d6a4a4, #dae2f8);
 }
 .coded-by {
   text-align: center;
@@ -108,22 +109,6 @@ canvas {
 }
 .HourForecast {
   margin-top: 110px;
-}
-
-.btn {
-  border-radius: 5px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  background: #dae2f8; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #d6a4a4,
-    #dae2f8
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #d6a4a4,
-    #dae2f8
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .search-input {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;

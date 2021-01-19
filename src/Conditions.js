@@ -1,6 +1,7 @@
 import React from "react";
  import RecieveDate from "./RecieveDate";
 import WeekIcon from "./WeekIcon";
+import ShowUnits from "./ShowUnits";
 export default function Conditions(props){
     return (
    <div className="Conditions" >
@@ -8,18 +9,7 @@ export default function Conditions(props){
             
           <h1 className="city"> {props.data.city}</h1> 
            <RecieveDate date={props.data.date}/>
-           
-       <span className="temperature"> {Math.round(props.data.temp)}</span> 
-        
-          <span className="units">
-            <span href="/" className="active">
-              C°{" "}
-            </span>
-            |<span href="/">F° </span>
-          </span>
-   
-       
-    
+             <ShowUnits celsius={props.data.temp}/>
 
 <ul>
         <li className="description">

@@ -16,16 +16,23 @@ body {
     #d9a7c7
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-.CurrentTemp h1 {
-  font-weight: 80;
-  font-size: 95px;
+.Conditions h1 {
+  font-weight: 60;
+  font-size: 55px;
+  margin-left: 10px;
 }
-
+.Conditions {
+  padding: 10px;
+  background: rgba(128, 31, 231, 0.1);
+}
 .CurrentTemp .temperature {
   font-size: 100px;
   text-align: center;
   margin-left: 40px;
   font-weight: 100;
+}
+.HourForecast h3 {
+  font-size: 15px;
 }
 
 ul {
@@ -36,7 +43,7 @@ ul {
   margin-right: 7px;
 }
 .minMax {
-  margin: 0;
+  margin-left: 75px;
   padding: 0;
 }
 
@@ -96,8 +103,8 @@ ul {
   padding: 20px;
 }
 
-.weather-icon {
-  width: 140px;
+canvas {
+  margin: 10px;
 }
 .HourForecast {
   margin-top: 110px;

@@ -17,7 +17,7 @@ function App() {
          
          </div>
             <div className="row">
-         <div className="col-sm">
+         <div className="col-sm-8">
               
             <CurrentTemp defaultCity="Moscow"/> </div>
              <div className="col-sm">

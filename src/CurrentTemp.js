@@ -4,7 +4,8 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
  import Loader from 'react-loader-spinner';
  import Conditions from "./Conditions";
- 
+ import Forecast from "./Forecast";
+
 
 
 export default function CurrentTemp(props) {
@@ -30,7 +31,7 @@ export default function CurrentTemp(props) {
    setRequest(true);
   }
   function search(){
-  let apiKey="2abf5cd5bdf12c255e9d60ca40791365";
+  let apiKey="e78ccf6f31ad51ffa9f2549f7ec140cb";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
  axios.get(apiUrl).then(getWeather);
 
@@ -64,9 +65,14 @@ export default function CurrentTemp(props) {
           <input  className="btn" type="submit" value= "Search" />
         
         </form>
-         <input className="btn  current-button" type="submit" value= "Current"/>
-         <Conditions data={weather}/>
-        </div>)
+        <div className="row">
+           <div className="row col-lg-8 ">
+             
+         <Conditions data={weather}/> </div>
+         
+        
+                <div className="row col-lg-4"> <Forecast city={weather.city}/></div>
+        </div></div>)
         ;
         
     }
@@ -86,3 +92,4 @@ search();
      );
  }
  }
+//<div className="col-sm"> Next Days <Forecast city={weather.city}/></div>

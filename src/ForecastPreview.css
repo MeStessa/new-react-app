@@ -1,0 +1,9 @@
+.ForecastPreview canvas {
+  position: relative;
+  left: -25px;
+  margin-top: 10px;
+}
+.ForecastPreview ul {
+  padding-left: 3px;
+  margin-right: 5px;
+}

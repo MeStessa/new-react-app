@@ -1,5 +1,6 @@
 import React , { useState }from "react";
 
+
 export default function ShowUnits(props){
 const [unit,setUnit]=useState ("celsius");
 
@@ -14,33 +15,24 @@ setUnit("fahrenheit");
 
 if (unit === "celsius"){
     return(
-        <div className="ShowUnits" >
-
- <span className="temperature"> {Math.round(props.celsius)}</span> 
-      
- <span className="units">
- <span href="/" className="active">  C° </span>
+<div className="ShowUnits" >
+ <div className="temperature"> {Math.round(props.celsius)}
+<span className="units">
+ <span href="/" className="active"> <i class="fas fa-thermometer-three-quarters"></i> C° </span>
             {" "}
- 
  |<a href="/"  onClick={showFahrenheit}>F° </a>
-</span>
-        </div>
-    );
+</span></div>  </div>);
     }
 
-    else{
+else{
          return(
         <div className="ShowUnits" >
-
- <span className="temperature"> {Math.round(props.celsius  * 9/5) + 32}</span> 
-      
+ <span className="temperature"> {Math.round(props.celsius  * 9/5) + 32} 
+ </span>
  <span className="units">
- <a href="/" onClick={showCelsius} className="active">C° </a>
- 
- |<span href="/"  >F° </span>
+ <i class="fas fa-thermometer-three-quarters"></i>{" "}
+<span href="/"  >F° </span> |<a href="/" onClick={showCelsius} className="active">C° </a>
 </span>
-        </div>
-    );
-       // return (Math.round(props.celsius  * 9/5) + 32);
-    }
+</div>
+    );}
 }

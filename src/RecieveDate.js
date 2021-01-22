@@ -35,7 +35,7 @@ if (minutes<10){
     minutes=`0${minutes}`;
 }
  return (
-    <div>
+    <div className="today">
         {date} {month} , {day} {hours}:{minutes}
     </div>
   );

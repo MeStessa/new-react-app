@@ -17,7 +17,7 @@ export default function Conditions(props){
  <div className="row">
     
     
-    <div className="col">  
+    <div className="col-8">  
  <ShowUnits celsius={props.data.temp}/>    </div>
   <div className="col"> <WeekIcon code={props.data.icon}/> </div></div>
 
@@ -31,9 +31,9 @@ export default function Conditions(props){
  
   <span className=" col CurrentDescription">{props.data.description}
 <br/>
-   <i class="fas fa-wind"></i>{" "} <i class="fas fa-tint"></i> {""}
+   {" "} <i class="fas fa-tint"></i> {""}
     Humidity: {props.data.humidity}% <br/>
-    Wind Speed: {props.data.wind}km/h     </span> 
+ <i class="fas fa-wind"></i>   Wind Speed: {props.data.wind}km/h     </span> 
    </div>
 
     </div>

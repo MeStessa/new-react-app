@@ -27,4 +27,7 @@
 .Conditions canvas {
   width: 80px;
   margin-top: 25px;
+  display: block;
+  position: relative;
+  left: -15px;
 }

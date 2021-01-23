@@ -19,15 +19,27 @@ export default function Forecast(props){
   if (dataLoaded  && props.city === forecast.city.name) {
     
   return  (
-    <div className="Forecast  container">
+    <div className=" row col Forecast">
       
-      
+      <div className=" col">
     <ForecastPreview data={forecast.list[0]}/>
+  </div>
+     <div className=" col">
     <ForecastPreview data={forecast.list[1]}/>
+   </div>
+     <div className=" col">
     <ForecastPreview data={forecast.list[2]}/>
+   </div>
+     <div className=" col">
     <ForecastPreview data={forecast.list[3]}/>
+     </div>
+     <div className=" col">
     <ForecastPreview data={forecast.list[4]}/>
     </div>
+     <div className=" col">
+   
+    <ForecastPreview data={forecast.list[5]}/>
+    </div></div>
         );
 }
 

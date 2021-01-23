@@ -29,7 +29,7 @@ export default function WeekIcon(props){
   return (
     <ReactAnimatedWeather
       icon={codeMapping[props.code]}
-      color="silver"
+      color="#"
       size={58}
       animate={true}
     />

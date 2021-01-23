@@ -15,7 +15,7 @@ export default function ForecastPreview(props) {
   }
 
   return (
-    <div className="ForecastPreview row">
+    <div className="ForecastPreview row col-sm">
      
        <div className="col-7">
      

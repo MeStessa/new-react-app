@@ -20,8 +20,11 @@
 .today {
   text-align: center;
 }
-.CurrentIcon {
-  display: block;
+.CurrentDescription {
   text-transform: capitalize;
-  text-align: centert;
+  text-align: center;
+}
+.Conditions canvas {
+  width: 80px;
+  margin-top: 25px;
 }

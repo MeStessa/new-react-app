@@ -20,7 +20,7 @@ export default function Forecast(props){
     
   return  (
     <div className="Forecast  container">
-      <h3 className="ForecastTitle"><i class="far fa-clock"></i></h3>
+      
       
     <ForecastPreview data={forecast.list[0]}/>
     <ForecastPreview data={forecast.list[1]}/>

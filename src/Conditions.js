@@ -9,39 +9,33 @@ export default function Conditions(props){
   
     <h1 className="city"> {props.data.city}</h1> 
      <button className="btn  current-button" type="submit" ><i class="fas fa-map-pin"></i></button>
-    <div className="float-left">
+    <div className="float-left ">
   
             <RecieveDate date={props.data.date}/>
  </div>
- <ShowUnits celsius={props.data.temp}/>
+
  <div className="row">
     
-       <div className="minMax">
-     <span><i class="fas fa-arrow-up"></i> </span> {Math.round(props.data.temp_max)}°
- / <span><i class="fas fa-arrow-down"></i> </span> {Math.round(props.data.temp_min)}° 
-    </div>
-    </div>
-    <div className=" CurrentIcon row col-sm">
-             <WeekIcon code={props.data.icon}/>  {props.data.description}</div>
-  
-              <div className=" col-6">
-             
- </div>
-<ul classname="row">
- <li className="description">
- <div className="float-right col">
+    
+    <div className="col">  
+ <ShowUnits celsius={props.data.temp}/>    </div>
+  <div className="col"> <WeekIcon code={props.data.icon}/> </div></div>
 
-  </div> <i class="fas fa-thermometer-quarter"></i> {""}
-   Feels like {Math.round(props.data.feelslike)} C°
-  </li>
-   <li className="description"> <i class="fas fa-wind"></i>{" "}
-    Wind Speed: {props.data.wind}km/h 
-    </li>
-    <li className="description"><i class="fas fa-tint"></i> {""}
-    Humidity: {props.data.humidity}%   </li>
-   <li> 
-</li>
-    </ul>
+  <div className="row">
+      <div className="col">
+<span><i class="fas fa-arrow-up"></i> </span> {Math.round(props.data.temp_max)}°
+ / <span><i class="fas fa-arrow-down"></i> </span> {Math.round(props.data.temp_min)}° 
+  <i class="fas fa-thermometer-quarter"></i>  {""}
+   <br/>Feels like {Math.round(props.data.feelslike)} C°
+  </div>
+ 
+  <span className=" col CurrentDescription">{props.data.description}
+<br/>
+   <i class="fas fa-wind"></i>{" "} <i class="fas fa-tint"></i> {""}
+    Humidity: {props.data.humidity}% <br/>
+    Wind Speed: {props.data.wind}km/h     </span> 
+   </div>
+
     </div>
     );
 }

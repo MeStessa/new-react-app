@@ -53,7 +53,8 @@ export default function CurrentTemp(props) {
          
          
 <div className=" CurrentTemp">
-       
+       <div className="row" >
+         <div className="col-9" >
         <form onSubmit={handleSubmit}>
           <input 
             type="search"
@@ -65,6 +66,10 @@ export default function CurrentTemp(props) {
           <input  className="btn" type="submit" value= "Search" />
         
         </form>
+        </div>
+         <div className="row col-3" >
+        <h3 className="ForecastTitle"><i class="far fa-clock"></i></h3> </div>
+        </div>
         <div className="row">
            <div className="row col-lg-8 ">
              

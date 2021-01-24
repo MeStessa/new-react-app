@@ -79,8 +79,8 @@ ul {
   background: linear-gradient(to right, #d6a4a4, #dae2f8);
   transition: all 200ms ease;
 }
-input .btn:hover {
-  color: black;
+.btn:hover {
+  box-shadow: rgba(37, 39, 89, 0.6) 3px 7px 7px 0;
 }
 .coded-by {
   text-align: center;
@@ -94,6 +94,9 @@ input .btn:hover {
   line-height: 2.2;
   font-family: "Courier New", Courier, monospace;
   margin: 20px 5px;
+}
+.search-input:hover {
+  box-shadow: rgba(37, 39, 89, 0.6) 3px 7px 7px 0;
 }
 .current-button {
   margin-left: 10px;

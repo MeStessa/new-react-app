@@ -17,7 +17,7 @@ function App() {
     
   <div className="coded-by">
    <a href="https://github.com/MeStessa/new-react-app" target="_blank"  rel="noreferrer">
- Open-source code
+ Open-source code on GitHub
    </a>  by Marina Mukhina
    </div> 
   </div>
